@@ -1,28 +1,19 @@
 package org.arpit.java2blog.controller;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 import org.arpit.java2blog.bean.Country;
 import org.arpit.java2blog.bean.CountryList;
-import org.arpit.java2blog.bean.State;
-import org.arpit.java2blog.bean.StateList;
-import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
 import org.hibernate.Query;
 import org.hibernate.SessionFactory;
-import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.converter.json.GsonFactoryBean;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-
-import com.google.gson.Gson;
 
 @RestController
 @Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
@@ -60,6 +51,7 @@ public class CountryController {
 	}
 
 	
+	@SuppressWarnings("rawtypes")
 	public List<Country> getCountry(List list){
 		
 		ArrayList<Country> al = new ArrayList<Country>();
