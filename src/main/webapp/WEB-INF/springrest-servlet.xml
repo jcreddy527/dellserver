@@ -41,6 +41,9 @@
 	  <value>org.arpit.java2blog.bean.City</value>
 	  <value>org.arpit.java2blog.bean.State</value>
 	  <value>org.arpit.java2blog.bean.Country</value>
+	   <value>org.arpit.java2blog.bean.Project</value>
+	 <value>org.arpit.java2blog.bean.Task</value>
+	 <value>org.arpit.java2blog.bean.EmployeeUpdate</value>
 	 
 	  </list>
 	 </property>

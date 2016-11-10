@@ -30,10 +30,10 @@
 				$scope.get = function(){
 	
 			
-			console.log($scope.country.countryname);
+			/* console.log($scope.country.countryname);
 			console.log($scope.state.statename);
 			console.log($scope.city.cityname);
-			
+			 */
 			}
 
 

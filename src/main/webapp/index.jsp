@@ -4,7 +4,9 @@
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
 <!--   <base href="/"/>
- -->   <script src="js/angularmodule.js"></script>
+ -->  
+  <script src="js/angularmodule.js"></script>
+  
   <!--   <script src="/app.js"></script>
       <script src="/employeeservice.js"></script>
       <script src="/employee_controller.js"></script>
