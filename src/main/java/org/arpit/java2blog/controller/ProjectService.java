@@ -53,12 +53,12 @@ public class ProjectService {
 	  return emp;  
 	 } 
 	 
-	 public ProjectList getProjects(SessionFactory sessionFactory)  {  
+	 public List<Project> getProjects(SessionFactory sessionFactory)  {  
 		
 		 Criteria criteria = sessionFactory.getCurrentSession().createCriteria(Project.class);	
 	       //  criteria.setFetchMode("address", FetchMode.JOIN);
 		        List list = criteria.list();
-		        System.out.println("List"+list);
+		      /*  System.out.println("List"+list);
 		        
 		        Set<Project> l = new HashSet<Project>();
 		        Project   e =null;
@@ -70,17 +70,17 @@ public class ProjectService {
 		        	  l.add(e);
 		            }
 		        ProjectList el = new ProjectList();
-		        el.setProjects(l);
-		    return el;   
+		        el.setProjects(l);*/
+		    return list;   
 	 }
 	 
-	 public TaskList getTasks(SessionFactory sessionFactory, int proid)  {  
+	 public List<Task> getTasks(SessionFactory sessionFactory, int proid)  {  
 		 
 		 Query q=sessionFactory.getCurrentSession().createQuery("from Task where project.proID = "+proid); 	
 		// Criteria criteria = sessionFactory.getCurrentSession().createCriteria(Task.class);	
 	       //  criteria.setFetchMode("address", FetchMode.JOIN);
 		        List list = q.list();
-		        System.out.println("List"+list);
+		     /*   System.out.println("List"+list);
 		        
 		        Set<Task> l = new HashSet<Task>();
 		        Task   e =null;
@@ -92,8 +92,8 @@ public class ProjectService {
 		        	  l.add(e);
 		            }
 		        TaskList el = new TaskList();
-		        el.setTasks(l);
-		    return el;   
+		        el.setTasks(l);*/
+		    return list;   
 	 }
 	 
  public TaskList getEmpTasks(SessionFactory sessionFactory, int empid)  {  
@@ -122,18 +122,20 @@ public class ProjectService {
 	 public void taskUpdate(SessionFactory sessionFactory, int proid,int taskid,int empid)  {  
 		 
 		 String hql = "UPDATE Task set emp.empid = "  + empid+"WHERE taskId ="+taskid+" and project.proID="+proid;
+		 System.out.println(hql);
 	Query query = sessionFactory.getCurrentSession().createQuery(hql);
 	int result = query.executeUpdate();
 	System.out.println("Rows affected: " + result);
 	 }
 	 
 	 
-	 public EmployeeUpdatList getEmployees(SessionFactory sessionFactory)  {  
+	 
+	 public List<EmployeeUpdate> getEmployees(SessionFactory sessionFactory)  {  
 			
 		 Criteria criteria = sessionFactory.getCurrentSession().createCriteria(EmployeeUpdate.class);	
 	       //  criteria.setFetchMode("address", FetchMode.JOIN);
-		        List list = criteria.list();
-		        System.out.println("List"+list);
+		        List<EmployeeUpdate> list = criteria.list();
+		     /*   System.out.println("List"+list);
 		        
 		        Set<EmployeeUpdate> l = new HashSet<EmployeeUpdate>();
 		        EmployeeUpdate   e =null;
@@ -145,8 +147,15 @@ public class ProjectService {
 		        	  l.add(e);
 		            }
 		        EmployeeUpdatList el = new EmployeeUpdatList();
-		        el.setEmployees(l);
-		    return el;   
+		        el.setEmployees(l);*/
+		    return list;   
+	 }
+	 public List<Task> getTaskss(SessionFactory sessionFactory)  {  
+			
+		 Criteria criteria = sessionFactory.getCurrentSession().createCriteria(Task.class);	
+		        List<Task> list = criteria.list();
+	
+		    return list;   
 	 }
 /*
 	 public void deleteEmployee(SessionFactory sessionFactory,int id) 
